@@ -1,0 +1,5 @@
+resource_group_name = "put the resource group name here"
+storage_account_name = "put the storage account name here"
+container_name = "terraform-state"
+access_key = "put the container access key here"
+key = "terraform.tfstate"
