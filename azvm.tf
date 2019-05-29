@@ -55,7 +55,7 @@ resource "azurerm_virtual_machine_extension" "vm" {
 
   settings = <<SETTINGS
         {
-        "commandToExecute": "apt-get update -y && apt-get install curl -y && curl --header PRIVATE-TOKEN:${var.GITLAB_ACCESS_TOKEN} https://fala.cl/api/v4/projects/1011/repository/files/init.sh/raw?ref=master --output initialization.sh && chmod +x initialization.sh && ./initialization.sh --token ${var.GITLAB_RUNNER_TOKEN} --executor ${var.GITLAB_RUNNER_EXECUTOR} --url ${var.GITLAB_URL} --tag ${var.GITLAB_RUNNER_TAG}${count.index+1} --locked ${var.GITLAB_RUNNER_LOCKED}"
+        "commandToExecute": "apt-get update -y && apt-get install curl -y &&   --output initialization.sh && chmod +x initialization.sh && ./initialization.sh --token ${var.GITLAB_RUNNER_TOKEN} --executor ${var.GITLAB_RUNNER_EXECUTOR} --url ${var.GITLAB_URL} --tag ${var.GITLAB_RUNNER_TAG}${count.index+1} --locked ${var.GITLAB_RUNNER_LOCKED}"
         }
 SETTINGS
 
